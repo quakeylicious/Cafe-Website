@@ -1,5 +1,6 @@
 // src/pages/LoginPage.tsx
 import React, { useState } from 'react'
+import bgImage from '../assets/images/newbg.jpg'
 
 type LoginForm = {
   email: string
@@ -62,11 +63,18 @@ export default function LoginPage() {
 
   return (
     <div
-      className="flex items-center justify-center min-h-screen bg-cover bg-center"
+      className="w-full min-h-screen bg-cover bg-center bg-no-repeat flex flex-col items-center justify-start "
       style={{
-        backgroundImage: "url('src/assets/images/loginbg.jpg')"
+        backgroundImage: `url(${bgImage})`
       }}
     >
+
+      {/* Content */}
+      <div className="relative pt-10 mb-30">
+        <h1 className="text-white font-serif text-5xl font-bold text-center drop-shadow-lg">
+          Welcome
+        </h1>
+      </div>
       <div className="bg-white p-8 rounded shadow-md w-80">
         <h2 className="text-2xl font-bold mb-6 text-center">Login</h2>
 
@@ -112,8 +120,8 @@ export default function LoginPage() {
             type="submit"
             disabled={loading}
             className={`w-full py-2 rounded text-white transition ${loading
-                ? 'bg-gray-400 cursor-not-allowed'
-                : 'bg-blue-500 hover:bg-blue-600'
+              ? 'bg-gray-400 cursor-not-allowed'
+              : 'bg-blue-500 hover:bg-blue-600'
               }`}
           >
             {loading ? 'Logging in...' : 'Login'}
@@ -124,8 +132,8 @@ export default function LoginPage() {
         {message && (
           <p
             className={`mt-4 text-center text-sm ${message.includes('✅')
-                ? 'text-green-600'
-                : 'text-red-500'
+              ? 'text-green-600'
+              : 'text-red-500'
               }`}
           >
             {message}
