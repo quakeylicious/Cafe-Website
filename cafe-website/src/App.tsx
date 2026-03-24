@@ -1,5 +1,6 @@
 import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom'
-import LoginPage from './pages/LoginPage'
+import LoginPage from './admin/LoginPage'
+import ProtectedAdmin from './admin/ProtectedAdmin'
 import Landing from './pages/Landing'
 import Menu from './pages/Menu'
 import CoffeeDetail from './pages/CoffeeDetail'
@@ -8,16 +9,14 @@ import BottomNav from './components/BottomNav'
 
 function AppContent() {
   const location = useLocation()
-
-  // hide navbar on login page
-  const hideNav = location.pathname === '/loginpage'
+  const hideNav = location.pathname.startsWith('/admin')
 
   return (
     <>
       {!hideNav && <BottomNav />}
-
       <Routes>
-        <Route path="/loginpage" element={<LoginPage />} />
+        <Route path="/admin/loginpage" element={<LoginPage />} />
+        <Route path="/admin" element={<ProtectedAdmin />} />
         <Route path="/" element={<Landing />} />
         <Route path="/menu" element={<Menu />} />
         <Route path="/menu/:id" element={<CoffeeDetail />} />
