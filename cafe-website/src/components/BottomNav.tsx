@@ -68,7 +68,7 @@ export default function BottomNav() {
         <div className="flex items-center gap-2">
           <span className="text-2xl">☕</span>
           <span className="font-bold text-stone-800 text-lg tracking-tight">
-            Brew<span className="text-amber-600">haus</span>
+            Patrick <span className="text-amber-600">haus</span>
           </span>
         </div>
         <div className="flex items-center gap-1">

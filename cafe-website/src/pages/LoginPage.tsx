@@ -61,7 +61,12 @@ export default function LoginPage() {
   }
 
   return (
-    <div className="flex items-center justify-center min-h-screen bg-yellow-400">
+    <div
+      className="flex items-center justify-center min-h-screen bg-cover bg-center"
+      style={{
+        backgroundImage: "url('src/assets/images/loginbg.jpg')"
+      }}
+    >
       <div className="bg-white p-8 rounded shadow-md w-80">
         <h2 className="text-2xl font-bold mb-6 text-center">Login</h2>
 
@@ -106,11 +111,10 @@ export default function LoginPage() {
           <button
             type="submit"
             disabled={loading}
-            className={`w-full py-2 rounded text-white transition ${
-              loading
+            className={`w-full py-2 rounded text-white transition ${loading
                 ? 'bg-gray-400 cursor-not-allowed'
                 : 'bg-blue-500 hover:bg-blue-600'
-            }`}
+              }`}
           >
             {loading ? 'Logging in...' : 'Login'}
           </button>
@@ -119,11 +123,10 @@ export default function LoginPage() {
         {/* Message */}
         {message && (
           <p
-            className={`mt-4 text-center text-sm ${
-              message.includes('✅')
+            className={`mt-4 text-center text-sm ${message.includes('✅')
                 ? 'text-green-600'
                 : 'text-red-500'
-            }`}
+              }`}
           >
             {message}
           </p>
