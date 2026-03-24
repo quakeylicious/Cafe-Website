@@ -238,7 +238,7 @@ function ProductRow({
             >
               <span
                 className={`absolute top-0.5 w-5 h-5 bg-white rounded-full shadow transition-all duration-200 ${
-                  coffee.featured ? "left-[22px]" : "left-0.5"
+                  coffee.featured ? "left-5.5" : "left-0.5"
                 }`}
               />
             </button>
@@ -628,7 +628,7 @@ function AddProductModal({
               >
                 <span
                   className={`absolute top-0.5 w-5 h-5 bg-white rounded-full shadow transition-all duration-200 ${
-                    form.isAvailable ? "left-[22px]" : "left-0.5"
+                    form.isAvailable ? "left-5.5" : "left-0.5"
                   }`}
                 />
               </button>
@@ -649,7 +649,7 @@ function AddProductModal({
               >
                 <span
                   className={`absolute top-0.5 w-5 h-5 bg-white rounded-full shadow transition-all duration-200 ${
-                    form.featured ? "left-[22px]" : "left-0.5"
+                    form.featured ? "left-5.5" : "left-0.5"
                   }`}
                 />
               </button>
