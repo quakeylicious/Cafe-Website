@@ -53,7 +53,7 @@ export default function Menu() {
               <button
                 key={cat}
                 onClick={() => setActiveCategory(cat as CoffeeCategory)}
-                className={`flex-shrink-0 px-4 py-1.5 rounded-full text-xs font-semibold transition-all duration-200 border ${
+                className={`shrink-0 px-4 py-1.5 rounded-full text-xs font-semibold transition-all duration-200 border ${
                   activeCategory === cat
                     ? "bg-amber-600 text-white border-amber-600 shadow-sm"
                     : "bg-white text-stone-500 border-stone-200 hover:border-amber-300 hover:text-amber-600"
