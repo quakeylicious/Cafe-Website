@@ -5,7 +5,7 @@ import Landing from './pages/Landing'
 import Menu from './pages/Menu'
 import CoffeeDetail from './pages/CoffeeDetail'
 import Favorites from './pages/Favorites'
-import BottomNav from './components/BottomNav'
+import FloatingHeart from './components/BottomNav'
 
 function AppContent() {
   const location = useLocation()
@@ -13,7 +13,7 @@ function AppContent() {
 
   return (
     <>
-      {!hideNav && <BottomNav />}
+      {!hideNav && <FloatingHeart />}
       <Routes>
         <Route path="/admin/loginpage" element={<LoginPage />} />
         <Route path="/admin" element={<ProtectedAdmin />} />
