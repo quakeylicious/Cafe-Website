@@ -11,36 +11,31 @@ export default function FloatingHeart() {
 
   return (
     <div
-      className="absolute z-50 flex items-center justify-between px-4 pt-4 w-full md:hidden"
-      style={{ top: 0, left: 0 }}
+      className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-4 py-3 md:px-8 md:py-4"
+      style={{
+        background: "rgba(10,7,3,0.75)",
+        backdropFilter: "blur(20px)",
+        borderBottom: "1px solid rgba(255,255,255,0.05)",
+      }}
     >
-      {/* Cafe name */}
-      <span className="f-display font-bold text-white text-lg" style={{ fontFamily: "'Syne', sans-serif" }}>
+      {/* Name */}
+      <span className="font-bold text-lg md:text-xl" style={{ fontFamily: "'Syne', sans-serif", color: "white" }}>
         Brew<span style={{ color: "#f59e0b" }}>haus</span>
       </span>
 
-      {/* Heart button */}
+      {/* Heart */}
       <button
         onClick={() => navigate(isFavoritesPage ? "/" : "/favorites")}
         style={{
-          width: "42px",
-          height: "42px",
-          borderRadius: "50%",
+          width: "40px", height: "40px", borderRadius: "50%", cursor: "pointer",
           background: isFavoritesPage ? "#f59e0b" : "rgba(255,255,255,0.10)",
-          backdropFilter: "blur(16px)",
           border: `1px solid ${isFavoritesPage ? "#f59e0b" : "rgba(255,255,255,0.15)"}`,
-          boxShadow: isFavoritesPage
-            ? "0 0 20px rgba(245,158,11,0.5)"
-            : "0 4px 16px rgba(0,0,0,0.4)",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
+          boxShadow: isFavoritesPage ? "0 0 20px rgba(245,158,11,0.5)" : "0 4px 16px rgba(0,0,0,0.4)",
+          display: "flex", alignItems: "center", justifyContent: "center",
           transition: "all 0.3s cubic-bezier(0.34,1.56,0.64,1)",
         }}
       >
-        <svg
-          viewBox="0 0 24 24"
-          style={{ width: "18px", height: "18px", transition: "all 0.3s ease" }}
+        <svg viewBox="0 0 24 24" style={{ width: "18px", height: "18px" }}
           fill={isFavoritesPage ? "white" : "none"}
           stroke={isFavoritesPage ? "white" : "rgba(255,255,255,0.8)"}
           strokeWidth={2}
