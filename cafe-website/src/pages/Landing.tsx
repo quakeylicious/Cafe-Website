@@ -253,7 +253,7 @@ export default function Landing() {
           {view === "categories" && (
             <div>
               {/* Hero */}
-                <div className="relative overflow-hidden" style={{ height: "260px" }}>
+                <div className="relative overflow-hidden" style={{ height: "260px", paddingTop: "56px" }}>
                   <img
                     src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=1400&q=80"
                     alt="hero"
@@ -368,7 +368,8 @@ export default function Landing() {
 
                   <button
                     onClick={goBack}
-                    className="back-btn absolute top-5 left-4 glass flex items-center gap-2 text-white text-sm font-medium px-3.5 py-2 rounded-full s1"
+                    className="back-btn absolute left-4 glass flex items-center gap-1.5 text-white text-sm font-medium px-3.5 py-2 rounded-full s1 md:top-5"
+                    style={{ top: "4.5rem" }}
                   >
                     <svg viewBox="0 0 24 24" className="back-arrow w-3.5 h-3.5" fill="none" stroke="currentColor" strokeWidth={2.5}>
                       <path d="M15 18l-6-6 6-6" />
@@ -481,9 +482,13 @@ export default function Landing() {
               <div>
                 {/* Sticky header */}
                 <div
-                  className="sticky top-0 z-20 px-4 pt-10 pb-4 md:pt-5 md:px-8"
-                  style={{ background: "rgba(10,7,3,0.92)", backdropFilter: "blur(20px)", borderBottom: "1px solid rgba(255,255,255,0.05)" }}
-                >
+                  className="sticky top-0 z-20 px-4 pb-4 md:px-8"
+                    style={{
+                      paddingTop: "calc(3.5rem + 16px)", // clears the fixed mobile bar
+                      background: "rgba(10,7,3,0.92)",
+                      backdropFilter: "blur(20px)",
+                      borderBottom: "1px solid rgba(255,255,255,0.05)"
+                    }}>
                   <button
                     onClick={goBack}
                     className="back-btn flex items-center gap-1.5 text-sm font-medium mb-3 s1"
